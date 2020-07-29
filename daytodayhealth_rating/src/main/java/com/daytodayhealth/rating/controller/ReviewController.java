@@ -42,8 +42,8 @@ public class ReviewController extends BaseController {
 			@PathVariable("reviewedId") Integer reviewedId,
 			@RequestParam(name = "pageSize", required = false, defaultValue = "20") final Integer pageSize,
 			@NotNull @RequestParam(name = "page") final Integer page,
-			@NotNull @RequestParam(name = "sortBy") final Integer sortBy,
-			@RequestHeader(value = "userToken", required = false) final String userToken) {
+			@NotNull @RequestParam(name = "sortBy") final Integer sortBy)
+			 {
 		return ResponseEntity.ok(
 				reviewService.getReview(reviewerType, reviewerId, reviewedType, reviewedId, page, pageSize, sortBy));
 	}
